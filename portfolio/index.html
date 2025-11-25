@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Page-specific layout for final index */
+    .container{max-width:1100px;margin:28px auto;padding:0 18px}
+    .home { display:flex; align-items:flex-start; gap:40px; padding:24px 0; flex-wrap:wrap; }
+    .profile-img { width:280px; height:280px; border-radius:14px; object-fit:cover; border:4px solid #3b82f6; }
+    .info { flex:1; min-width:320px; }
+    .info h2{margin-top:0}
+    .meta-chips{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+    .chip{background:#0b1220;padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.03)}
+
+    .info-sections { display:flex; gap:18px; justify-content:space-between; margin:30px 0 40px; flex-wrap:wrap; }
+    .info-card { flex:1; min-width:220px; background:linear-gradient(180deg,#0f172a,#0b1220); padding:18px; border-radius:10px; border:1px solid #1f2937; box-shadow:0 8px 20px rgba(2,6,23,0.45); }
+    .info-card h3{ margin-top:0; color:#60a5fa }
+
+    @media (max-width:900px){ .home{align-items:center} .profile-img{width:220px;height:220px} }
+    @media (max-width:700px){ .home{flex-direction:column;align-items:center;text-align:center} .info-sections{flex-direction:column} .info{min-width:unset} }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Rushi</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="contacts.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="home">
+      <img src="My Photo.jpg" alt="Rishi" class="profile-img" />
+      <div class="info">
+        <h2>Hi, I'm Rushi</h2>
+        <p>I am a B.Tech student, aspiring cricketer, and web developer learning C and Python. I love animation and building colourful UI pages. Currently improving fitness and working on front-end projects for college.</p>
+        <div class="meta-chips">
+          <span class="chip">Age: 17</span>
+          <span class="chip">Location: telangana </span>
+          <span class="chip">Role: All-rounder</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-sections" aria-label="Education, Interests, Goals">
+      <div class="info-card">
+        <h3>Education</h3>
+        <p><strong>ITM University — B.Tech (Final year)</strong><br />Focused on web development, programming fundamentals and college projects.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>Interests</h3>
+        <p>Animation, UI/UX design, cricket training, learning C & Python, and building creative front-end micro-projects.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>Goals</h3>
+        <p>Improve fitness and agility for cricket selection, create polished web projects, and aim for Andhra U-19 / U-23 squads.</p>
+      </div>
+    </section>
+
+    <footer style="text-align:center;color:#9ca3af;padding:18px 0;font-size:14px">© rushi@claims this portfolio</footer>
+  </main>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

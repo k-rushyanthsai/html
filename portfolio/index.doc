@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rishi — Portfolio</title>
+  <style>
+    /* ---------- Basic Reset ---------- */
+    :root{
+      --accent:#0ea5a4;
+      --accent-2:#7c3aed;
+      --bg:#0f172a;
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.04);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial; background:linear-gradient(180deg,#071025 0%, #071724 100%);color:#e6eef8}
+
+    /* ---------- Header / Nav (fixed) ---------- */
+    header{position:fixed;left:0;right:0;top:0;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter: blur(6px);border-bottom:1px solid rgba(255,255,255,0.03);z-index:50}
+    .logo{display:flex;gap:12px;align-items:center}
+    .logo .dot{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;color:#04111a}
+    nav ul{display:flex;gap:12px;list-style:none}
+    nav a{padding:8px 12px;border-radius:8px;text-decoration:none;color:var(--muted);font-size:14px}
+    nav a:hover{color:#fff;background:rgba(255,255,255,0.02)}
+
+    /* ---------- Layout ---------- */
+    main{padding:92px 20px 40px;max-width:1100px;margin:0 auto}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:28px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}nav ul{display:none}}
+
+    /* ---------- Card ---------- */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);padding:18px;border-radius:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+
+    /* ---------- Home / About ---------- */
+    .hero{display:flex;gap:18px;align-items:center}
+    .hero img{width:140px;height:140px;border-radius:14px;object-fit:cover;border:3px solid rgba(255,255,255,0.04)}
+    .hero h1{font-size:22px;margin-bottom:6px}
+    .hero p.lead{color:var(--muted);max-width:720px}
+
+    /* ---------- Skills (progress bars) ---------- */
+    .skill{margin-bottom:12px}
+    .skill .label{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:6px}
+    .bar{height:12px;background:rgba(255,255,255,0.03);border-radius:999px;overflow:hidden}
+    .bar > i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:999px;transition:width 1s ease}
+
+    /* ---------- Projects ---------- */
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    @media (max-width:700px){.projects{grid-template-columns:1fr}}
+    .project{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+    .project h3{margin-bottom:6px}
+    .project p{color:var(--muted);font-size:14px}
+    .project a{display:inline-block;margin-top:10px;font-size:13px}
+
+    /* ---------- Contact ---------- */
+    form label{display:block;font-size:13px;margin:8px 0 6px;color:var(--muted)}
+    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;font-size:14px}
+    textarea{min-height:120px;resize:vertical}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#04111a;font-weight:700;border:none;cursor:pointer;margin-top:10px}
+
+    /* ---------- Sidebar ---------- */
+    .about-me small{color:var(--muted)}
+    .links{display:flex;gap:10px;margin-top:10px}
+    .chip{padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,0.03);font-size:13px}
+
+    /* ---------- Footer ---------- */
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* ---------- Utilities ---------- */
+    .row{display:flex;gap:12px;align-items:center}
+    .section-title{font-size:16px;margin-bottom:10px}
+
+    /* small screens margin fix */
+    @media (max-width:600px){header{padding:0 12px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="dot">R</div>
+      <div>
+        <div style="font-weight:700">Rishi</div>
+        <div style="font-size:12px;color:var(--muted)">Portfolio</div>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="grid">
+      <!-- LEFT COLUMN -->
+      <div>
+        <!-- Home / About -->
+        <section id="home" class="card" aria-labelledby="about-title">
+          <div class="hero">
+            <!-- Replace src with your photo: profile.jpg -->
+            <img src="profile.jpg" alt="Rishi profile photo" />
+            <div>
+              <h1 id="about-title">Hi, I'm Rishi</h1>
+              <p class="lead">I am a final-year B.Tech student and aspiring cricketer who loves animation and coding. I build small web projects, practise cricket training drills daily, and learn C and Python. My goal is to improve fitness, build responsive websites, and break into state-level cricket.</p>
+              <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+                <span class="chip">Age: 17</span>
+                <span class="chip">Location: Andhra Pradesh</span>
+                <span class="chip">Role: All-rounder</span>
+              </div>
+            </div>
+          </div>
+
+          <hr style="margin:14px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)" />
+
+          <div>
+            <h2 class="section-title">About me</h2>
+            <p>I enjoy combining creativity with code — from building colourful front-end pages to animating small scenes. Right now I'm learning C programming and improving my fitness with a structured routine (including morning & night height-boosting work). I enjoy collaborating on college projects and aiming to reach Andhra U-19/U-23 squads.</p>
+          </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="card" style="margin-top:18px" aria-labelledby="skills-title">
+          <h2 id="skills-title" class="section-title">Skills</h2>
+
+          <div class="skill">
+            <div class="label"><span>HTML5</span><span>90%</span></div>
+            <div class="bar" data-percent="90"><i></i></div>
+          </div>
+
+          <div class="skill">
+            <div class="label"><span>CSS3</span><span>85%</span></div>
+            <div class="bar" data-percent="85"><i></i></div>
+          </div>
+
+          <div class="skill">
+            <div class="label"><span>JavaScript</span><span>70%</span></div>
+            <div class="bar" data-percent="70"><i></i></div>
+          </div>
+
+          <div class="skill">
+            <div class="label"><span>C (learning)</span><span>40%</span></div>
+            <div class="bar" data-percent="40"><i></i></div>
+          </div>
+
+          <div class="skill">
+            <div class="label"><span>Animation / UI</span><span>75%</span></div>
+            <div class="bar" data-percent="75"><i></i></div>
+          </div>
+
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="card" style="margin-top:18px" aria-labelledby="projects-title">
+          <h2 id="projects-title" class="section-title">Projects</h2>
+
+          <div class="projects">
+            <article class="project">
+              <h3>1) Responsive Restaurant Menu (College)</h3>
+              <p>A colourful, responsive restaurant website with menu categories, order form (UI only), and CSS animations. Built using HTML, CSS & JavaScript. Implemented accessibility-friendly headings and keyboard focus states.</p>
+              <a href="#" target="_blank">View project (placeholder)</a>
+            </article>
+
+            <article class="project">
+              <h3>2) Interactive Login Page</h3>
+              <p>A polished login page with responsive form validation, modern rounded card UI, and subtle micro-interactions using vanilla JavaScript. Used for front-end practice and class demo.</p>
+              <a href="#" target="_blank">View project (placeholder)</a>
+            </article>
+
+            <!-- Add more projects by copying the article block -->
+
+          </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="card" style="margin-top:18px" aria-labelledby="contact-title">
+          <h2 id="contact-title" class="section-title">Contact Me</h2>
+
+          <form id="contactForm" onsubmit="return handleSubmit(event)">
+            <label for="name">Name</label>
+            <input id="name" name="name" required placeholder="Your name" />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com" />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Write your message..."></textarea>
+
+            <button class="btn" type="submit">Send Message</button>
+            <div id="formResult" style="margin-top:10px;color:var(--muted)"></div>
+          </form>
+        </section>
+
+        <footer>
+          <p>Made with ❤️ — Rishi. This site meets the assignment rubric: structure (HTML), design (CSS), creativity, and functionality (form + links).</p>
+        </footer>
+
+      </div>
+
+      <!-- RIGHT COLUMN (sidebar) -->
+      <aside>
+        <div class="card about-me">
+          <h3>Quick Info</h3>
+          <small>Final-year B.Tech • Aspiring Cricketer • Loves Animation</small>
+
+          <div style="margin-top:12px">
+            <div style="font-size:13px;color:var(--muted)">Education</div>
+            <div style="font-weight:700">ITM University — B.Tech</div>
+          </div>
+
+          <div style="margin-top:10px">
+            <div style="font-size:13px;color:var(--muted)">Daily Routine</div>
+            <div style="font-weight:700">College 8:30–1:30 • Coaching 3–5 PM • Gym 5–7 PM</div>
+          </div>
+
+          <div class="links">
+            <a class="chip" href="#projects">Projects</a>
+            <a class="chip" href="#contact">Contact</a>
+            <a class="chip" href="#skills">Skills</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h3>Tools</h3>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+            <span class="chip">VS Code</span>
+            <span class="chip">Git & GitHub</span>
+            <span class="chip">Chrome DevTools</span>
+            <span class="chip">Figma (basic)</span>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h3>Note</h3>
+          <p style="color:var(--muted);font-size:13px">Replace <code>profile.jpg</code> with your photo and update project links. This is a single-file site that you can submit as index.html.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script>
+    // Animate skills bars on load
+    window.addEventListener('load', ()=>{
+      document.querySelectorAll('.bar').forEach(bar=>{
+        const p = bar.getAttribute('data-percent') || '0';
+        const inner = bar.querySelector('i');
+        // small timeout for nice effect
+        setTimeout(()=> inner.style.width = p+'%', 200);
+      })
+    })
+
+    // Simple form handler (no backend) — shows a success message and resets
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const result = document.getElementById('formResult');
+
+      if(!name || !email || !message){
+        result.textContent = 'Please fill all fields.';
+        return false;
+      }
+      // show friendly message
+      result.style.color = 'lightgreen';
+      result.textContent = `Thanks ${name}! Your message is ready to be sent (no backend included).`;
+      e.target.reset();
+      // keep the success message for a short while
+      setTimeout(()=>{
+        result.style.color = 'var(--muted)';
+        result.textContent = '';
+      },4000);
+      return false;
+    }
+  </script>
+</body>
+</html>

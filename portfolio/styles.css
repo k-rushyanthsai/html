@@ -1,0 +1,165 @@
+/* ======= Global Theme: Orange Radiant + Navy Blue & Comic Sans ======= */
+body{
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, #001f3f, #012a55, #ff6a00);
+  color: white;
+}
+
+/* ======= Header ======= */
+header{
+  background: #001a33;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #ff6a00;
+}
+
+header h1{
+  margin: 0;
+  font-size: 30px;
+  letter-spacing: 1px;
+  color: #ff8c32;
+}
+
+/* ======= Navigation ======= */
+nav a{
+  margin: 0 12px;
+  color: #ffd2a1;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: "Comic Sans MS";
+  transition: 0.3s;
+}
+
+nav a:hover{
+  color: #ffffff;
+  text-shadow: 0px 0px 12px #ff8c32;
+}
+
+/* ======= Sections ======= */
+section{
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  background: rgba(0, 26, 51, 0.7);
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 12px rgba(255, 106, 0, 0.4);
+}
+
+/* ======= Home Section ======= */
+.profile-img{
+  width: 180px;
+  height: 180px;
+  border-radius: 14px;
+  display: block;
+  margin: 0 auto 15px;
+  border: 4px solid #ff8c32;
+}
+
+.home h2{
+  text-align: center;
+  font-size: 28px;
+  color: #ffb366;
+}
+
+.home p{
+  text-align: center;
+  font-size: 17px;
+  color: #ffe4cc;
+}
+
+/* ======= Skills Section ======= */
+.skill{
+  margin: 18px 0;
+}
+
+.skill span{
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffb366;
+}
+
+.bar{
+  width: 100%;
+  height: 14px;
+  background: #012a55;
+  border-radius: 7px;
+  margin-top: 6px;
+}
+
+.bar div{
+  height: 14px;
+  background: linear-gradient(90deg, #ff6a00, #ff8c32);
+  border-radius: 7px;
+  box-shadow: 0 0 8px rgba(255, 106, 0, 0.6);
+}
+
+/* ======= Projects Section ======= */
+.project{
+  background: rgba(0, 20, 40, 0.7);
+  padding: 18px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ff8c32;
+  box-shadow: 0 0 10px rgba(255, 136, 51, 0.4);
+}
+
+.project h3{
+  margin: 0 0 8px;
+  color: #ffb366;
+  font-size: 20px;
+}
+
+.project p{
+  color: #ffe4cc;
+}
+
+.project a{
+  color: #ffd2a1;
+  text-decoration: underline;
+}
+
+/* ======= Contact Form ======= */
+.contact-form h2{
+  text-align: center;
+  margin-bottom: 18px;
+  color: #ffb366;
+}
+
+input, textarea{
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  background: #012a55;
+  color: white;
+  outline: none;
+  font-family: "Comic Sans MS";
+}
+
+input:focus, textarea:focus{
+  border: 2px solid #ff6a00;
+  box-shadow: 0 0 10px rgba(255, 106, 0, 0.6);
+}
+
+button{
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(90deg, #ff6a00, #ff8c32);
+  border: none;
+  color: #04111a;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-family: "Comic Sans MS";
+  box-shadow: 0 0 12px rgba(255, 106, 0, 0.4);
+}
+
+button:hover{
+  background: linear-gradient(90deg, #ff8c32, #ffae66);
+}

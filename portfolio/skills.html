@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* small page-specific tweaks for skills layout */
+    .skills { max-width:900px;margin:28px auto;padding:20px }
+    .skill { margin:18px 0 }
+    .skill-row { display:flex;justify-content:space-between;align-items:center;margin-bottom:8px }
+    .skill-name { font-weight:700;color:#ffb366 }
+    .skill-percent { font-weight:700;color:#ffd2a1 }
+    .bar { height:14px;background:#012a55;border-radius:8px;overflow:hidden }
+    .bar > div { height:100%; width:0%; background:linear-gradient(90deg,#ff6a00,#ff8c32); border-radius:8px; transition:width 900ms ease }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 style="text-align:center;margin:18px 0;color:#ff8c32">Skills</h1>
+    <nav style="text-align:center;margin-bottom:8px">
+      <a href="index.html">Home</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="contacts.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="skills">
+    <section aria-labelledby="skills-title">
+      <h2 id="skills-title" style="color:#ffe4cc">My Skills</h2>
+
+      <div class="skill">
+        <div class="skill-row"><div class="skill-name">HTML</div><div class="skill-percent">90%</div></div>
+        <div class="bar" data-percent="90"><div style="width:90%"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-row"><div class="skill-name">CSS</div><div class="skill-percent">85%</div></div>
+        <div class="bar" data-percent="85"><div style="width:85%"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-row"><div class="skill-name">JavaScript</div><div class="skill-percent">70%</div></div>
+        <div class="bar" data-percent="70"><div style="width:70%"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-row"><div class="skill-name">C (Learning)</div><div class="skill-percent">40%</div></div>
+        <div class="bar" data-percent="40"><div style="width:40%"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-row"><div class="skill-name">UI / Animation</div><div class="skill-percent">75%</div></div>
+        <div class="bar" data-percent="75"><div style="width:75%"></div></div>
+      </div>
+
+    </section>
+  </main>
+
+  <script>
+    // Animate bars on load (in case width set to 0 in CSS)
+    document.addEventListener('DOMContentLoaded', ()=>{
+      document.querySelectorAll('.bar').forEach(bar =>{
+        const p = bar.getAttribute('data-percent') || '0';
+        const inner = bar.querySelector('div');
+        // ensure starting from 0 for animation
+        inner.style.width = '0%';
+        setTimeout(()=> inner.style.width = p + '%', 120);
+      })
+    })
+  </script>
+</body>
+</html>
